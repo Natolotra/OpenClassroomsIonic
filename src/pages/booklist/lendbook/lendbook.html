@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons>
+            <button ion-button clear (click)="dismissModal()">Fermer</button>
+        </ion-buttons>
+        <ion-title>
+            {{ book.title }}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>{{ book.title }}</ion-card-header>
+        <ion-card-content>
+            {{ book.author }}
+        </ion-card-content>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                <button
+                    ion-button
+                    full
+                    color="primary"
+                    [disabled]="!book.isLend"
+                    (click)="onToggleAppareil()">Rendre</button>
+                </ion-col>
+                <ion-col>
+                <button
+                    ion-button
+                    full
+                    color="secondary"
+                    [disabled]="book.isLend"
+                    (click)="onToggleAppareil()">Prêter</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>

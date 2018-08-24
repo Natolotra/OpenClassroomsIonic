@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button ion-only (click)="onToogleMenu()">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            Livres
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <button ion-item *ngFor="let book of books; let i = index" (click)="onLoadBook(i)" [ngClass]="book.isLend ? 'lend' : ''">
+            <ion-icon name="arrow-forward"></ion-icon>
+            {{ book.title }}
+        </button>
+    </ion-list>
+</ion-content>

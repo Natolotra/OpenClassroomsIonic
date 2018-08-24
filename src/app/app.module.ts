@@ -5,12 +5,24 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
+import { BookListPage } from '../pages/booklist/booklist';
+import { LendBookPage } from '../pages/booklist/lendbook/lendbook';
+import { CdListPage } from '../pages/cdlist/cdlist';
+import { LendCdPage } from '../pages/cdlist/lendcd/lendcd';
+import { SettingsPage } from '../pages/settings/settings';
+import { BookService } from '../services/book.service';
+import { CDService } from '../services/cd.Service';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    TabsPage,
+    BookListPage,
+    LendBookPage,
+    CdListPage,
+    LendCdPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -19,11 +31,18 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    TabsPage,
+    BookListPage,
+    LendBookPage,
+    CdListPage,
+    LendCdPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BookService,
+    CDService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
